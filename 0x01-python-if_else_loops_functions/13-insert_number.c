@@ -9,14 +9,16 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *new, *ptr;
-	int i;
+	int i = 0;
 
 	if (head == NULL)
 		return (NULL);
 	ptr = *head;
 	if (ptr == NULL)
-		return (NULL);
-	i = 0;
+	{
+		new = insert_nodeint_at_index(head, i, number);
+		return (new);
+	}
 	while (ptr != NULL)
 	{
 		if (ptr->n >= number)
