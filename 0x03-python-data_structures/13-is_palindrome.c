@@ -6,14 +6,26 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr, *p;
+	listint_t *ptr, *p1, *p;
+	int i = 0, j = 0, mid;
 
-	if (head == NULL)
-		return (0);
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 	ptr = *head;
-	p = reverse(head);
+	p1 = *head;
+	while (ptr != NULL)
+	{
+		ptr = ptr->next;
+		i++;
+	}
+	mid = i / 2;
+	while (j < mid)
+	{
+		p1 = p1->next;
+		j++;
+	}
+	p = reverse(&p1);
+	ptr = *head;
 	while (ptr != NULL && p != NULL)
 	{
 		if (ptr->n != p->n)
