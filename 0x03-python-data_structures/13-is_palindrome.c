@@ -7,14 +7,19 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptr, *p;
+	int j = 0, i;
 
-	if (*head == NULL || head == NULL)
-		return (1);
-	if ((*head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 	ptr = *head;
 	p = reverse(head);
-	while (ptr != NULL && p != NULL)
+	while (ptr != NULL)
+	{
+		ptr = ptr->next;
+		j++;
+	}
+	ptr = *head;
+	for (i = 0; i < j / 2; i++)
 	{
 		if (ptr->n != p->n)
 			return (0);
