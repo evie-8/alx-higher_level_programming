@@ -5,8 +5,16 @@ def add_tuple(tuple_a=(), tuple_b=()):
         b = 0
         return a, b
     elif len(tuple_a) == 0 and len(tuple_b) > 0:
+        if len(tuple_b) < 2:
+            a = tuple_b[0]
+            b = 0
+            return a, b
         return tuple_b
     elif len(tuple_a) > 0 and len(tuple_b) == 0:
+        if len(tuple_a) < 2:
+            a = tuple_a[0]
+            b = 0
+            return a, b
         return tuple_a
     elif len(tuple_a) < 2 and len(tuple_b) >= 2:
         a = tuple_a[0] + tuple_b[0]
