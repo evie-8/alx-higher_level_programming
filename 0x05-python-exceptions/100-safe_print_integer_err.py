@@ -6,7 +6,7 @@ def safe_print_integer_err(value):
     except ValueError as err1:
         print("Exception: {}".format(err1), file=stderr)
         return False
-    except ValueError as err2:
+    except TypeError as err2:
         print("Exception: {}".format(err2), file=stderr)
         return False
     else:
