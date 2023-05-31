@@ -3,6 +3,9 @@
 """
 
 
+import math
+
+
 class MagicClass:
     """class called magic.
     """
@@ -23,4 +26,4 @@ class MagicClass:
     def circumference(self):
         """circumference.
         """
-        return 2 * math.pi * self.__radius
+        return (2 * math.pi) * self.__radius
