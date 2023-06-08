@@ -46,3 +46,10 @@ no args
 >>> text_indentation()
 Traceback (most recent call last):
 TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("\n\nhi. you")
+<BLANKLINE>
+<BLANKLINE>
+hi.
+<BLANKLINE>
+you
