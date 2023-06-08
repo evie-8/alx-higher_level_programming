@@ -1,0 +1,48 @@
+creating documentation for text_indentation function
+*************************************
+How text_indentation function works
+*************************************
+This module takes one argument
+Usage: text_indentation
+
+********
+strings
+*******
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Nafula. Evelyn")
+Nafula.
+<BLANKLINE>
+Evelyn
+
+>>> text_indentation("Nafula? hi: are you okay. well")
+Nafula?
+<BLANKLINE>
+hi:
+<BLANKLINE>
+are you okay.
+<BLANKLINE>
+well
+
+>>> text_indentation("")
+Traceback (most recent call last):
+IndexError: string index out of range
+
+***********
+non strings
+***********
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(45)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+**********
+no args
+*********
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
