@@ -40,3 +40,14 @@ Positive integers
 
 >>> print(my_list)
 [-1, -56, -2, -1003, -45]
+
+************
+Empty list
+************
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
