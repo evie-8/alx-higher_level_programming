@@ -8,6 +8,8 @@ tests on strings and integers <= 0
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
+>>> type(bg)
+<class '7-base_geometry.BaseGeometry'>
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 >>> try:
@@ -60,3 +62,7 @@ TypeError: age must be an integer
 >>> bg.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
+
+>>> bg = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
