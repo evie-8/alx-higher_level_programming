@@ -50,10 +50,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """change dictionary to instance"""
-        if cls.__name__ == "Rectangle":
-            new_obj = cls(1, 2, 3, 5, 4)
-        else:
-            new_obj = cls(1, 3, 1, 1)
+        if dictionary and len(dictionary) != 0:
+            if cls.__name__ == "Rectangle":
+                new_obj = cls(1, 2, 3, 5, 4)
+            else:
+                new_obj = cls(1, 3, 1, 1)
         new_obj.update(**dictionary)
         return new_obj
 
@@ -74,7 +75,7 @@ class Base:
         filename = cls.__name__ + '.csv'
         with open(filename, "w") as f:
             if list_objs is None or list_objs == []:
-                f.write('[]')
+                f.write('')
             else:
                 if cls.__name__ == "Rectangle":
                     fields = ['id', 'width', 'height', 'x', 'y']
