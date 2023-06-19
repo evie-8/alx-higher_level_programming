@@ -52,9 +52,9 @@ class Base:
         """change dictionary to instance"""
         if dictionary and len(dictionary) != 0:
             if cls.__name__ == "Rectangle":
-                new_obj = cls(1, 2, 3, 5, 4)
+                new_obj = cls(1, 1)
             else:
-                new_obj = cls(1, 3, 1, 1)
+                new_obj = cls(1)
         new_obj.update(**dictionary)
         return new_obj
 
