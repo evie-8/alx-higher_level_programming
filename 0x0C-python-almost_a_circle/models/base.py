@@ -50,7 +50,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """change dictionary to instance"""
-        if dictionary and len(dictionary) != 0:
+        if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new_obj = cls(1, 1)
             else:
@@ -75,7 +75,7 @@ class Base:
         filename = cls.__name__ + '.csv'
         with open(filename, "w") as f:
             if list_objs is None or list_objs == []:
-                f.write('')
+                f.write('[]')
             else:
                 if cls.__name__ == "Rectangle":
                     fields = ['id', 'width', 'height', 'x', 'y']
@@ -90,11 +90,11 @@ class Base:
         """convert csv to python object"""
         filename = cls.__name__ + '.csv'
         try:
-            if cls.__name__ == "Rectangle":
-                fields = ['id', 'width', 'height', 'x', 'y']
-            if cls.__name__ == "Square":
-                fields = ['id', 'size', 'x', 'y']
             with open(filename) as f:
+                if cls.__name__ == "Rectangle":
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                if cls.__name__ == "Square":
+                    fields = ['id', 'size', 'x', 'y']
                 dicts = csv.DictReader(f, fieldnames=fields)
                 objs = []
                 for d in dicts:
