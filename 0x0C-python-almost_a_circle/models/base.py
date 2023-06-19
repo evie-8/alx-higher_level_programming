@@ -73,7 +73,7 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """save objects to csv file in csv format"""
         filename = cls.__name__ + '.csv'
-        with open(filename, "w") as f:
+        with open(filename, "w", newline="") as f:
             if list_objs is None or list_objs == []:
                 f.write('[]')
             else:
@@ -90,7 +90,7 @@ class Base:
         """convert csv to python object"""
         filename = cls.__name__ + '.csv'
         try:
-            with open(filename) as f:
+            with open(filename, "r", newline="") as f:
                 if cls.__name__ == "Rectangle":
                     fields = ['id', 'width', 'height', 'x', 'y']
                 if cls.__name__ == "Square":
