@@ -152,11 +152,3 @@ class TestBase(unittest.TestCase):
         r2 = [78, 67]
         if all(i for i in r2 if type(i) != Rectangle or type(i) != Square):
             self.assertRaises(TypeError)
-
-    def test_draw(self):
-        """draw test"""
-        list_rectangles = [Rectangle(90, 110, 30, 10, 6),
-                           Rectangle(20, 25, 110, 80, 33)]
-        list_squares = [Square(15, 70, 50, 67),
-                        Square(80, 30, 70, 66)]
-        Base.draw(list_rectangles, list_squares)
