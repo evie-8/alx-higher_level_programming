@@ -96,7 +96,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """updating or changing attributes of instance"""
         if args and len(args) != 0:
-            k = ('id', 'x', 'y', 'width', 'height')
+            k = ('id', 'width', 'height', 'x', 'y')
             new = dict(zip(k, args))
             for k, v in new.items():
                 setattr(self, k, v)
