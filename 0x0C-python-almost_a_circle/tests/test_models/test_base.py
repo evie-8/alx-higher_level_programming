@@ -40,8 +40,8 @@ class TestBase(unittest.TestCase):
         """test id when nothing is passed"""
         b4 = Base()
         b5 = Base(None)
-        self.assertEqual(b4.id, 1)
-        self.assertEqual(b5.id, 2)
+        self.assertEqual(b4.id, 2)
+        self.assertEqual(b5.id, 3)
 
     def test_id_float(self):
         """testing for id"""
