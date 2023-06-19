@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""tests for squsre class"""
+"""tests for square class"""
 
 
 import unittest
+import pep8
 from models.square import Square
 from models.base import Base
 from models.rectangle import Rectangle
@@ -10,6 +11,15 @@ from models.rectangle import Rectangle
 
 class Testsquare(unittest.TestCase):
     """testing functions in the Square class"""
+    def test_pep8_square(self):
+        """check if class conforms pep8 quidelines"""
+        style_pep = pep8.StyleGuide()
+        file_result = style_pep.check_files(['models/square.py'])
+        errs = file_result.get_statistics('E')
+        error_messages = [f'{error[0]}:{error[1]}: {error[2]}'
+                          for error in errs]
+        self.assertEqual(errs, [], f'errors: \n{chr(10).join(error_messages)}')
+
     def test_squareinstance(self):
         """checks for type of instance"""
         sq = Square(5)
