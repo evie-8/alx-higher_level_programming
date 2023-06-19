@@ -4,6 +4,8 @@
 
 import json
 import csv
+import turtle
+from time import sleep
 
 
 class Base:
@@ -102,3 +104,33 @@ class Base:
                 return objs
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draw rectangles and squares"""
+        lists = [list_rectangles + list_squares]
+        t = turtle.Turtle()
+        turtle.title("Rectangles and Squares")
+        for shape in lists:
+            for rect in shape:
+                t.fillcolor("red")
+                t.begin_fill()
+                t.pensize(4)
+                turtle.up()
+                turtle.goto(-10, 250)
+                mess = f"width: {rect.width}, height: {rect.height}"
+                turtle.down()
+                turtle.write(mess, align='left', font=('Arial', 20, 'normal'))
+                t.up()
+                t.goto(rect.x, rect.y)
+                t.down()
+                for i in range(2):
+                    t.forward(rect.width)
+                    t.rt(90)
+                    t.forward(rect.height)
+                    t.rt(90)
+                t.end_fill()
+                sleep(5)
+                t.clear()
+                turtle.clear()
+                t.reset()
