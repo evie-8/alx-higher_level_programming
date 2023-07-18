@@ -1,2 +1,2 @@
--- create a table
-CREATE TABLE IF NOT EXISTS first_table(id INT, name VARCHAR(256));
+-- create a table and show desciption
+SHOW CREATE TABLE first_table;
