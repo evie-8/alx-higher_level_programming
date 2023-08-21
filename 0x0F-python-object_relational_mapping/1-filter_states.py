@@ -10,12 +10,12 @@ if __name__ == "__main__":
         sys.exit("You have passed few arguments")
     db = MySQLdb.connect(host='localhost', user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
-    cursors = db.cursor()
-    result = cursors.execute("SELECT * FROM states WHERE states.name like 'N%'"
+    cur = db.cursor()
+    r = cur.execute("SELECT * FROM states WHERE states.name like BINARY 'N%' "
 
-                             "ORDER BY states.id ASC")
-    rows = cursors.fetchall()
+                    "ORDER BY states.id ASC")
+    rows = cur.fetchall()
     for row in rows:
         print(row)
-    cursors.close()
+    cur.close()
     db.close()
