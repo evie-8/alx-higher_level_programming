@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Script that lists all states
+'''Script that lists all states'''
 
 
 if __name__ == "__main__":
