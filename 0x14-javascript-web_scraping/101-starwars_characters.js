@@ -21,5 +21,5 @@ request(url, function (err, response, body) {
     console.log(err);
   }
   const chars = JSON.parse(body).characters;
-  helperFunctiont(chars, 0);
+  helperFunction(chars, 0);
 });
