@@ -1,0 +1,5 @@
+function addListItem () {
+  $(' UL.my_list').append('<li>Item</li>');
+}
+
+$('DIV#add_item').click(addListItem);
